@@ -1,48 +1,35 @@
 import React, { useState } from 'react';
-import './Login.css'; // Assuming you have some basic styles
+import './login.css'; // Importing the CSS file
 
-function Login() {
+function Login({ onLogin }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleLogin = (event) => {
+    const handleSubmit = event => {
         event.preventDefault();
-        // Simple validation
-        if (!username || !password) {
-            setErrorMessage("Username and password are required");
-            return;
+        // Placeholder for authentication logic
+        if (username === 'admin' && password === 'password') {
+            onLogin(true);
+        } else {
+            alert('Invalid username or password');
         }
-        // Implement your authentication logic here
-        console.log("Login attempted with", username, password);
-        setErrorMessage(""); // clear error message on successful login attempt
     };
 
     return (
-        <div className="login-container">
-            <form onSubmit={handleLogin}>
-                <h2>Login</h2>
-                <div className="input-group">
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+        <div className="login-page"> {/* Wrapper div with centering styles */}
+            <form className="login-form" onSubmit={handleSubmit}>
+                <div>
+                    <label>
+                        Username:
+                        <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                    </label>
                 </div>
-                <div className="input-group">
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
+                <div>
+                    <label>
+                        Password:
+                        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    </label>
                 </div>
-                {errorMessage && <div className="error">{errorMessage}</div>}
                 <button type="submit">Login</button>
             </form>
         </div>
