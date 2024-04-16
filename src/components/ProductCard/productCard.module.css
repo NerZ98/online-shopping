@@ -1,0 +1,37 @@
+.productCard {
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #cfcfcf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.productCard h4 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.productCard p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.productCard .price {
+  font-weight: 500;
+  color: #007BFF;
+  font-size: 18px;
+}

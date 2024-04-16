@@ -1,0 +1,19 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: row; /* Ensures that the flex items are laid out horizontally */
+    width: 100%; /* This ensures the wrapper takes the full width of its parent */
+}
+
+.sidebar {
+    flex: 0 0 20%; /* Sidebar takes exactly 20% of the content-wrapper's width */
+}
+
+.main-content {
+    flex-grow: 1; /* Takes up the remaining 80% of the space */
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  

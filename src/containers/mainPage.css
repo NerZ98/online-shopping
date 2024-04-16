@@ -1,0 +1,27 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal width */
+    gap: 20px; /* Adjust the space between cards */
+    padding: 20px; /* Optional: Adds padding around the grid */
+  }
+
+.product-card {
+    flex: 1 1 30%; /* Allows the card to grow and shrink starting from 30% of the container width */
+    margin: 20px; /* Adds margin around each card */
+    max-width: calc(33.33% - 40px); /* Ensures that no more than three cards fit per row, subtracting the total margin */
+}
+
+  
+.search-bar { /* Assuming you have a CSS class for the search bar */
+    width: calc(100% - 40px); /* Adjust width considering padding */
+    margin: 20px; /* Add margin on both sides */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+  
+  @media (max-width: 768px) {
+    .main-page, .search-bar {
+      padding: 0 10px; /* Smaller padding for smaller screens */
+      margin: 0 10px; /* Or smaller margin if applied directly to the search bar */
+    }
+  }
+  
