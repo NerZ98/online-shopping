@@ -16,6 +16,17 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.topSection {
+  margin-bottom: 10px;
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .productCard h4 {
   margin: 0;
   color: #333;
@@ -30,8 +41,33 @@
   line-height: 1.4;
 }
 
-.productCard .price {
+.priceAndStar {
+  display: flex;
+  flex-direction: column; /* Stack the star and price vertically */
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.price {
   font-weight: 500;
-  color: #007BFF;
+  color: #007bff;
   font-size: 18px;
+  margin-top: 5px; /* Add some spacing between the star and price */
+}
+
+.star {
+  cursor: pointer;
+  color: gray; /* Default non-favorite color */
+}
+
+.favorite {
+  color: gold; /* Highlighted color when favorite */
+}
+
+.productImage {
+  width: 100%; /* Makes the image take 80% of the width */
+  height: 100px; /* Fixed height, or 'auto' for automatic adjustment */
+  object-fit: cover; /* Ensures the image covers the designated area without distortion */
+  border-radius: 8px; /* Optional: rounded corners */
 }

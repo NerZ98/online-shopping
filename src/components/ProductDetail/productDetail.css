@@ -59,3 +59,10 @@
     margin-top: 15px;
   }
   
+  .product-image {
+    width: 100%; /* Makes the image fully span the width of the card */
+    height: 20px; /* Fixed height, or 'auto' for automatic adjustment */
+    object-fit: cover; /* Ensures the image covers the designated area without distortion */
+    border-top-left-radius: 8px; /* Optional: rounded corners */
+    border-top-right-radius: 8px; /* Optional: rounded corners */
+  }

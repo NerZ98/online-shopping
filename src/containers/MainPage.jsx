@@ -3,6 +3,7 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import ProductCard from '../components/ProductCard/ProductCard';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
 import './mainPage.css';
+// import keyboard1 from './imgs/1.jpg'
 
 function MainPage() {
   const [products, setProducts] = useState([]);
@@ -12,12 +13,49 @@ function MainPage() {
 
   useEffect(() => {
     const fetchedProducts = [
-      { id: 1, name: 'Wireless Mouse', description: 'A nice wireless mouse', price: '20$' },
-      { id: 2, name: 'Keyboard', description: 'Mechanical keyboard', price: '50$' },
-      { id: 3, name: 'Keyboard', description: 'Mechanical keyboard', price: '50$' },
-      { id: 4, name: 'Keyboard', description: 'Mechanical keyboard', price: '50$' },
-      { id: 5, name: 'Keyboard', description: 'Mechanical keyboard', price: '50$' },
-      { id: 6, name: 'Keyboard', description: 'Mechanical keyboard', price: '50$' },
+      {
+        id: 1,
+        name: 'Wireless Mouse',
+        description: 'A nice wireless mouse',
+        price: '20$',
+        imageUrl: '/imgs/mouse.jpg'
+      },
+      {
+        id: 2,
+        name: 'Keyboard',
+        description: 'Mechanical keyboard',
+        price: '50$',
+        image: 'src/imgs/1.png'
+
+      },
+      {
+        id: 3,
+        name: 'Keyboard',
+        description: 'Mechanical keyboard',
+        price: '50$',
+        imageUrl: '/imgs/keyboard2.jpg'
+      },
+      {
+        id: 4,
+        name: 'Keyboard',
+        description: 'Mechanical keyboard',
+        price: '50$',
+        imageUrl: '/imgs/keyboard3.jpg'
+      },
+      {
+        id: 5,
+        name: 'Keyboard',
+        description: 'Mechanical keyboard',
+        price: '50$',
+        imageUrl: '/imgs/keyboard4.jpg'
+      },
+      {
+        id: 6,
+        name: 'Keyboard',
+        description: 'Mechanical keyboard',
+        price: '50$',
+        imageUrl: '/imgs/keyboard5.jpg'
+      },
     ];
     setProducts(fetchedProducts);
     setOriginalProducts(fetchedProducts);
@@ -31,6 +69,7 @@ function MainPage() {
     );
     setProducts(filtered);
   };
+
   const handleReset = () => {
     setSearchTerm('');
     setProducts(originalProducts);
@@ -38,15 +77,19 @@ function MainPage() {
 
   return (
     <div className="main-page">
-        <div  className="search-bar" >
-      <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} onReset={handleReset}/>
+      <div className="search-bar">
+        <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} onReset={handleReset} />
       </div>
       {selectedProduct ? (
         <ProductDetail product={selectedProduct} onClose={() => setSelectedProduct(null)} />
       ) : (
         <div className="product-grid">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} onClick={() => setSelectedProduct(product)} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              onClick={() => setSelectedProduct(product)}
+            />
           ))}
         </div>
       )}
