@@ -18,22 +18,21 @@ function MainPage() {
         name: 'Wireless Mouse',
         description: 'A nice wireless mouse',
         price: '20$',
-        imageUrl: '/imgs/mouse.jpg'
+        imageUrl: require('../imgs/1.jpg')
       },
       {
         id: 2,
         name: 'Keyboard',
         description: 'Mechanical keyboard',
         price: '50$',
-        image: 'src/imgs/1.png'
-
+        imageUrl: require('../imgs/1.jpg')
       },
       {
         id: 3,
         name: 'Keyboard',
         description: 'Mechanical keyboard',
         price: '50$',
-        imageUrl: '/imgs/keyboard2.jpg'
+        imageUrl: require('../imgs/1.jpg')
       },
       {
         id: 4,
@@ -88,13 +87,14 @@ function MainPage() {
             <ProductCard
               key={product.id}
               product={product}
-              onClick={() => setSelectedProduct(product)}
+              onClick={() => setSelectedProduct(product)}  // Make sure this handler is correctly used
             />
           ))}
         </div>
       )}
     </div>
   );
+  
 }
 
 export default MainPage;

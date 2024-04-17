@@ -10,7 +10,7 @@ function ProductDetail({ product, onClose }) {
                 <p>{product.description}</p>
                 <p>{product.price}</p>
                 <img
-                    src={product.image}
+                    src={product.imageUrl}
                     alt={product.name}
                     className="product-image"
                 />

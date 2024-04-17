@@ -3,12 +3,12 @@ import { FaStar } from 'react-icons/fa';
 import { useFavorites } from '../Favourite/FavoritesContext';
 import styles from './productCard.module.css';
 
-function ProductCard({ product }) {
+function ProductCard({ product, onClick }) {
   const { addFavorite, removeFavorite, isFavorite } = useFavorites();
   const favorite = isFavorite(product);
 
   const toggleFavorite = (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // This stops the click from propagating to the parent elements
     if (favorite) {
       removeFavorite(product);
     } else {
@@ -17,7 +17,7 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className={styles.productCard} onClick={() => console.log('Product clicked')}>
+    <div className={styles.productCard} onClick={onClick}> {/* Use the onClick prop here */}
       <div className={styles.topSection}>
         <h4>{product.name}</h4>
         <p>{product.description}</p>
