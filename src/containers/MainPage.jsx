@@ -55,6 +55,7 @@ function MainPage() {
         price: '50$',
         imageUrl: '/imgs/keyboard5.jpg'
       },
+      
     ];
     setProducts(fetchedProducts);
     setOriginalProducts(fetchedProducts);

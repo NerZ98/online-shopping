@@ -1,0 +1,60 @@
+/* Styles for the overall cart container */
+.cart-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Grid layout for cart items */
+  .cart-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal width */
+    gap: 20px; /* Adjust the space between cards */
+    padding: 20px; /* Optional: Adds padding around the grid */
+  }
+  
+  /* Styling for individual product cards within the cart */
+  .product-card {
+    flex: 1 1 30%; /* Allows the card to grow and shrink starting from 30% of the container width */
+    margin: 20px; /* Adds margin around each card */
+    max-width: calc(33.33% - 40px); /* Ensures that no more than three cards fit per row, subtracting the total margin */
+  }
+  
+  /* Styles for a search bar, if included in the cart page */
+  .search-bar {
+    width: calc(100% - 40px); /* Adjust width considering padding */
+    margin: 20px; /* Add margin on both sides */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+  
+  /* Responsive media queries */
+  @media (max-width: 768px) {
+    .cart-items {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens like tablets */
+    }
+  
+    .product-card, .search-bar {
+      max-width: calc(50% - 40px); /* Adjusts the maximum width for smaller grids */
+    }
+  
+    .main-page, .search-bar {
+      padding: 0 10px; /* Smaller padding for smaller screens */
+      margin: 0 10px; /* Adjust margin for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cart-items {
+      grid-template-columns: 1fr; /* One column for mobile screens */
+    }
+  
+    .product-card {
+      max-width: 100%; /* Full width for mobile layouts */
+    }
+  
+    .search-bar {
+      width: calc(100% - 20px); /* Adjust the width for very small screens */
+    }
+  }
+  

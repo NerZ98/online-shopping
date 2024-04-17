@@ -43,7 +43,7 @@
 
 .priceAndStar {
   display: flex;
-  flex-direction: column; /* Stack the star and price vertically */
+  flex-direction: column; 
   align-items: center;
   width: 20%;
   justify-content: space-between;
@@ -53,21 +53,21 @@
   font-weight: 500;
   color: #007bff;
   font-size: 18px;
-  margin-top: 5px; /* Add some spacing between the star and price */
+  margin-top: 5px; 
 }
 
 .star {
   cursor: pointer;
-  color: gray; /* Default non-favorite color */
+  color: gray; 
 }
 
 .favorite {
-  color: gold; /* Highlighted color when favorite */
+  color: gold; 
 }
 
 .productImage {
-  width: 100%; /* Makes the image take 80% of the width */
-  height: 100px; /* Fixed height, or 'auto' for automatic adjustment */
-  object-fit: cover; /* Ensures the image covers the designated area without distortion */
-  border-radius: 8px; /* Optional: rounded corners */
+  width: 100%; 
+  height: 150px; 
+  object-fit: cover;
+  border-radius: 8px; 
 }

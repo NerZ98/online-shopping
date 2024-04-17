@@ -1,68 +1,107 @@
-/* Overlay styling to blur or dim the background */
+/* Backdrop styling */
 .product-detail-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(8px);
-    background-color: rgba(0, 0, 0, 0.4); /* Adds a slight darkening in addition to the blur */
-    z-index: 5;
-    cursor: pointer;
-  }
-  
-  /* Main container for product details, centered with improved styling */
-  .product-detail {
-    position: fixed;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
-    background-color: #ffffff;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto; /* Enables scrolling if content is too long */
-  }
-  
-  /* Button styling for a more modern look */
-  .product-detail button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px; /* Space from button to content */
-  }
-  
-  /* Styling headings for clear hierarchy */
-  .product-detail h2 {
-    color: #333333;
-    margin-bottom: 10px;
-  }
-  
-  /* Paragraph styling for better readability */
-  .product-detail p {
-    color: #666666;
-    line-height: 1.5;
-    font-size: 16px;
-  }
-  
-  /* Ensures that the top area is not too crammed */
-  .product-detail > * + * {
-    margin-top: 15px;
-  }
-  
-  .product-image {
-    width: 50%; /* Makes the image fully span the width of the card */
-    height: 50%; /* Fixed height, or 'auto' for automatic adjustment */
-    object-fit: cover; /* Ensures the image covers the designated area without distortion */
-    border-top-left-radius: 8px; /* Optional: rounded corners */
-    border-top-right-radius: 8px; /* Optional: rounded corners */
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px); /* Adds blur effect */
+  z-index: 100;
+}
+
+/* Main container for the product detail */
+.product-detail {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 101;
+  display: flex;
+  width: 80vw;
+  height: 70vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds shadow effect */
+}
+
+/* Image styling */
+.product-detail img.product-image {
+  width: 80%; /* Takes up 80% of the container width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover;
+  border-radius: 8px; /* Optional */
+}
+
+/* Text container */
+.product-detail div.text-container {
+  width: 20%; /* Takes up 20% of the container width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures items are stacked */
+  padding-left: 16px;
+}
+
+/* Close button styling */
+.product-detail button.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 24px; /* Larger size for better interaction */
+  cursor: pointer;
+  color: #707070; /* Soft gray for aesthetic integration */
+}
+
+.product-detail button.close-button::before {
+  content: '×';
+}
+
+/* Div containers for title, description, and price */
+.product-detail div.title, .product-detail div.description, .product-detail div.price {
+  background-color: #f4f4f4; /* Light gray background for slight emphasis */
+  padding: 12px;
+  border-radius: 4px; /* Soft rounded corners */
+  margin-bottom: 8px; /* Minimal space between elements */
+}
+
+/* Title styling */
+.product-detail div.title h2 {
+  font-size: 24px; /* Larger, more readable size */
+  font-weight: 600; /* Semi-bold for clear emphasis */
+  color: #333; /* Deep gray for modern look */
+  margin: 0; /* Remove default margins */
+}
+
+/* Description styling */
+.product-detail div.description p {
+  font-size: 16px; /* Comfortable reading size */
+  color: #555; /* Soft gray for less strain on eyes */
+  margin: 0; /* Remove default margins */
+}
+
+/* Price styling */
+.product-detail div.price p {
+  font-size: 20px; /* Larger size for emphasis */
+  font-weight: bold;
+  color: #1a1a1a; /* Deep, rich black for high contrast */
+  margin: 0; /* Remove default margins */
+}
+
+.product-detail .favorite-button, .product-detail .close-button {
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background-color: #e2e2e2;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-detail .favorite-button.highlighted {
+  background-color: #007bff; 
+  color: white;
+}
