@@ -23,25 +23,33 @@
   height: 70vh;
   overflow-y: auto;
   border-radius: 8px;
-  padding: 16px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds shadow effect */
 }
 
 /* Image styling */
 .product-detail img.product-image {
-  width: 80%; /* Takes up 80% of the container width */
-  height: auto; /* Maintains aspect ratio */
+  width: 70%; /* Adjusted to 70% for the image */
+  height: auto; /* Keeps aspect ratio intact */
   object-fit: cover;
-  border-radius: 8px; /* Optional */
+  border-radius: 8px;
+  border: 4px solid #a1a1a1; /* Adds a solid gray border */
 }
 
 /* Text container */
 .product-detail div.text-container {
-  width: 20%; /* Takes up 20% of the container width */
+  flex: 1; /* Takes remaining space */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures items are stacked */
-  padding-left: 16px;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items to the start */
+  padding: 16px;
+  background-color: #a1a1a1; /* Existing light gray background */
+  /* background-image: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);  */
+  border-radius: 8px;
+  margin-left: 20px; /* Adds separation between image and text */
+  color: #000000; /* Sets a distinct teal color for text details */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
 }
 
 /* Close button styling */
@@ -51,49 +59,61 @@
   right: 8px;
   background: none;
   border: none;
-  font-size: 24px; /* Larger size for better interaction */
+  font-size: 24px;
   cursor: pointer;
-  color: #707070; /* Soft gray for aesthetic integration */
+  color: #707070;
 }
 
 .product-detail button.close-button::before {
   content: '×';
 }
 
-/* Div containers for title, description, and price */
+/* Stats container for views, purchases, favorites */
+.product-detail .product-stats {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #000000; /* Maintains a more subdued color for stats */
+}
+
+/* Stats individual items */
+.product-detail .product-stats span {
+  margin-top: 4px;
+}
+
+/* General text improvements */
 .product-detail div.title, .product-detail div.description, .product-detail div.price {
-  background-color: #f4f4f4; /* Light gray background for slight emphasis */
+  background-color: #e8e8e8; /* Slightly darker for differentiation */
   padding: 12px;
-  border-radius: 4px; /* Soft rounded corners */
-  margin-bottom: 8px; /* Minimal space between elements */
+  border-radius: 4px;
+  margin-bottom: 8px;
 }
 
-/* Title styling */
+.product-detail div.title h2, .product-detail div.description p, .product-detail div.price p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Improves readability */
+  margin: 0;
+}
+
 .product-detail div.title h2 {
-  font-size: 24px; /* Larger, more readable size */
-  font-weight: 600; /* Semi-bold for clear emphasis */
-  color: #333; /* Deep gray for modern look */
-  margin: 0; /* Remove default margins */
+  font-size: 22px; /* Adjusted for better balance */
+  color: #333; /* Deep gray for titles */
 }
 
-/* Description styling */
 .product-detail div.description p {
-  font-size: 16px; /* Comfortable reading size */
-  color: #555; /* Soft gray for less strain on eyes */
-  margin: 0; /* Remove default margins */
+  font-size: 16px;
+  color: #004d40; /* Teal color for description to stand out */
 }
 
-/* Price styling */
 .product-detail div.price p {
-  font-size: 20px; /* Larger size for emphasis */
+  font-size: 18px; /* Standardized for visual consistency */
   font-weight: bold;
-  color: #1a1a1a; /* Deep, rich black for high contrast */
-  margin: 0; /* Remove default margins */
+  color: #d32f2f; /* Rich red for price to highlight importance */
 }
 
 .product-detail .favorite-button, .product-detail .close-button {
   font-size: 16px;
-  padding: 12px 24px;
+  padding: 10px 20px; /* Better fit for button text */
   border-radius: 6px;
   background-color: #e2e2e2;
   border: none;
@@ -102,6 +122,10 @@
 }
 
 .product-detail .favorite-button.highlighted {
-  background-color: #007bff; 
+  background-color: #007bff; /* Bright blue for active state */
   color: white;
+}
+
+.text-container{
+  background-color: red;
 }

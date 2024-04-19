@@ -41,3 +41,8 @@
     color: #ffffff;
   }
   
+  .sidebar-logo img {
+    width: 100%; /* Adjust this value to fit your design */
+    height: auto;
+    margin-bottom: 20px; /* Adds some space below the logo */
+}

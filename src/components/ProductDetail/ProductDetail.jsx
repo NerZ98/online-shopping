@@ -28,6 +28,11 @@ function ProductDetail({ product, onClose }) {
                     <h2>{product.name}</h2>
                     <p className="price">{product.price}</p>
                     <p>{product.description}</p>
+                    <div className="product-stats">
+                        <span>Views: {product.views}</span>
+                        <span>Purchases: {product.purchases}</span>
+                        <span>Favorites: {product.favorites}</span>
+                    </div>
                     <button
                         className={`favorite-button ${favorite ? 'highlighted' : ''}`}
                         onClick={handleFavoriteClick}

@@ -18,43 +18,61 @@ function MainPage() {
         name: 'Wireless Mouse',
         description: 'A nice wireless mouse',
         price: '20$',
-        imageUrl: require('../imgs/1.jpg')
-      },
-      {
-        id: 2,
+        imageUrl: require('../imgs/mouse1.jpg'),
+        views: 150,
+        purchases: 25,
+        favorites: 45
+    },
+    {
+        id: 11,
+        name: 'Tablet',
+        description: '10-inch tablet with fast performance',
+        price: '200$',
+        imageUrl: require('../imgs/tablet1.jpg'),
+        views: 300,
+        purchases: 80,
+        favorites: 110
+    },
+    {
+        id: 12,
+        name: 'Smartwatch',
+        description: 'Feature-rich smartwatch for fitness tracking',
+        price: '120$',
+        imageUrl: require('../imgs/smartwatch1.jpg'),
+        views: 220,
+        purchases: 40,
+        favorites: 70
+    },
+    {
+        id: 13,
         name: 'Keyboard',
-        description: 'Mechanical keyboard',
-        price: '50$',
-        imageUrl: require('../imgs/1.jpg')
-      },
-      {
-        id: 3,
-        name: 'Keyboard',
-        description: 'Mechanical keyboard',
-        price: '50$',
-        imageUrl: require('../imgs/1.jpg')
-      },
-      {
-        id: 4,
-        name: 'Keyboard',
-        description: 'Mechanical keyboard',
-        price: '50$',
-        imageUrl: '/imgs/keyboard3.jpg'
-      },
-      {
-        id: 5,
-        name: 'Keyboard',
-        description: 'Mechanical keyboard',
-        price: '50$',
-        imageUrl: '/imgs/keyboard4.jpg'
-      },
-      {
-        id: 6,
-        name: 'Keyboard',
-        description: 'Mechanical keyboard',
-        price: '50$',
-        imageUrl: '/imgs/keyboard5.jpg'
-      },
+        description: 'Mechanical Keyboard for gaming or typing',
+        price: '100$',
+        imageUrl: require('../imgs/keyboard1.jpg'),
+        views: 250,
+        purchases: 30,
+        favorites: 60
+    },
+    {
+        id: 14,
+        name: 'External Hard Drive',
+        description: '2TB external hard drive for data storage',
+        price: '100$',
+        imageUrl: require('../imgs/harddrive1.jfif'),
+        views: 180,
+        purchases: 45,
+        favorites: 75
+    },
+    {
+        id: 15,
+        name: 'Printer',
+        description: 'All-in-one wireless printer',
+        price: '150$',
+        imageUrl: require('../imgs/printer1.jfif'),
+        views: 120,
+        purchases: 20,
+        favorites: 30
+    }
       
     ];
     setProducts(fetchedProducts);

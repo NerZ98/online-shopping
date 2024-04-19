@@ -1,0 +1,21 @@
+.product-statistics {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.product-statistics h3 {
+    color: #333;
+}
+
+.product-statistics ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-statistics li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+}

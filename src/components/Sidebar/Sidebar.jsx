@@ -3,11 +3,19 @@ import { useFavorites } from '../../components/Favourite/FavoritesContext';
 import { Link } from 'react-router-dom';
 import './sidebar.css';
 
+
+// Import the logo image
+import logo from 'C:/Users/mithil.kashid/Desktop/Traning/frontend/online-shopping/src/imgs/Logo.png';
+
 function Sidebar({ onLogout }) {
     const { favorites } = useFavorites();
 
     return (
         <div className="sidebar">
+            {/* Add the logo at the top of the sidebar */}
+            <div className="sidebar-logo">
+                <img src={logo} alt="Logo" />
+            </div>
             <ul>
                 <li>
                     <Link to="/home">Home</Link> {/* Link to home */}
@@ -24,7 +32,7 @@ function Sidebar({ onLogout }) {
                 </li>
             </ul>
 
-            {favorites.length > 0 && (
+            {/* {favorites.length > 0 && (
                 <div className="favorites">
                     <h3>Favorite Products</h3>
                     <ul>
@@ -33,7 +41,7 @@ function Sidebar({ onLogout }) {
                         ))}
                     </ul>
                 </div>
-            )}
+            )} */}
         </div>
     );
 }
